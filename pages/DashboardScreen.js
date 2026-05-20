@@ -179,14 +179,28 @@ export default function DashboardScreen({ navigation }) {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       >
-        <View style={styles.totalCard}>
-          <Text style={styles.totalLabel}>Total Hewan</Text>
-          <Text style={styles.totalValue}>{total}</Text>
-        </View>
+        <View style={styles.statsContainer}>
+            <View style={styles.totalCard}>
+                <Text style={styles.totalLabel}>Total Hewan</Text>
+                <Text style={styles.totalValue}>{total}</Text>
+            </View>
 
-        <View style={styles.totalAssetsCard}>
-            <Text style={styles.totalLabel}>Total Aset</Text>
-            <Text style={styles.totalValue}>Rp {stats.sapiTotalPrice + stats.dombaTotalPrice + stats.kambingTotalPrice}</Text>
+            <View style={styles.totalAssetsCard}>
+                <Text style={styles.totalLabel}>Total Aset</Text>
+                <Text style={styles.totalValue}>Rp {stats.sapiTotalPrice + stats.dombaTotalPrice + stats.kambingTotalPrice}</Text>
+            </View>
+
+            <View style={styles.jenisTerbanyakCard}>
+                <Text style={styles.totalLabel}>Jenis Terbanyak</Text>
+                <Text style={styles.totalValue}>
+                    {(() => {
+                        const maxCount = Math.max(stats.sapiCount, stats.dombaCount, stats.kambingCount);
+                        if (maxCount === stats.sapiCount) return 'Sapi';
+                        if (maxCount === stats.dombaCount) return 'Domba';
+                        return 'Kambing';
+                    })()}
+                </Text>
+            </View>
         </View>
 
         <Text style={styles.sectionTitle}>Kategori Hewan</Text>
@@ -353,4 +367,5 @@ const styles = StyleSheet.create({
     saveBtn: { backgroundColor: '#2ecc71' },
     saveBtnText: { color: '#fff', fontWeight: 'bold' },
     totalAssetsCard: { backgroundColor: '#FE9276', margin: 15, padding: 20, borderRadius: 15, alignItems: 'center', elevation: 3 },
+    jenisTerbanyakCard: { backgroundColor: '#CAEEFB', margin: 15, padding: 20, borderRadius: 15, alignItems: 'center', elevation: 3 },
 });

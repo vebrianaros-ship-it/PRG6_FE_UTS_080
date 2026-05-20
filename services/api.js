@@ -25,7 +25,7 @@ export const getAllHewans = async () => {
   }
 };
 
-export const getHewanByCategory = async (category) => {
+export const getHewansByCategory = async (category) => {
   try {
     const response = await api.get(`/hewans/${category}`);  
     console.log(`API Response for category ${category}:`, JSON.stringify(response.data, null, 2));
@@ -50,15 +50,6 @@ export const getHewanById = async (id) => {
   }
 };
 
-// export const createHewan = async (hewanData) => {
-//   try {
-//     const response = await api.post('/hewans', hewanData);
-//     return response.data;
-//   } catch (error) {
-//     console.error('API Error:', error);
-//     return { status: 500, message: 'Gagal menambahkan data', data: null };
-//   }
-// };
 
 export const createHewan = async (hewanData) => {
   try {

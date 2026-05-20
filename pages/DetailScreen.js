@@ -66,7 +66,7 @@ export default function DetailScreen({ route }) {
         <Text style={styles.name}>{Hewan.pemilikHewan}</Text>
         
         <View style={styles.infoRow}>
-          <Text style={styles.label}>Tipe Hewan</Text>
+          <Text style={styles.label}>Jenis Hewan</Text>
           <Text style={styles.value}>{getJenisName(Hewan.jenisHewan)}</Text>
         </View>
 
