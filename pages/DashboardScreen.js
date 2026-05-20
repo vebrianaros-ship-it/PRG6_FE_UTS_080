@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     totalLabel: { fontSize: 16, color: '#666' },
     totalValue: { fontSize: 28, fontWeight: 'bold', color: '#fcfcfc' },
     sectionTitle: { fontSize: 18, fontWeight: 'bold', color: '#2c3e50', marginHorizontal: 15, marginTop: 20 },
-    statsContainer: { flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 15 },
+    statsContainer: { flexDirection: 'row', flexDirection:"column", justifyContent: 'space-between', marginHorizontal: 15 },
     statCard: { flex: 1, margin: 5, padding: 15, borderRadius: 10, alignItems: 'center', elevation: 2 },
     statTitle: { fontSize: 16, color: '#fff', marginBottom: 10 },
     statCount: { fontSize: 20, fontWeight: 'bold', color: '#fff' },
